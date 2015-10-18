@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.bleicker.app.logger.domain.model.Duration" table="duration">
+        <id name="identity" type="java.lang.String">
+            <column name="identity" />
+            <!--<generator class="org.hibernate.id.UUIDGenerator" />-->
+        </id>
+        <property name="startDate" type="java.util.Date">
+            <column name="start_date" not-null="false" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="end_date" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>
