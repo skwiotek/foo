@@ -61,7 +61,7 @@ public class Activity extends Thread {
         Date end = new Date();
         Session session = Default.getSession();
         Transaction tx = session.beginTransaction();
-        Duration duration = new Duration(start, end);
+        Duration duration = new Duration(getName(), start, end);
         session.save(duration);
         session.flush();
         tx.commit();
