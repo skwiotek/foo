@@ -14,7 +14,7 @@ public class DurationTest {
         Duration duration = new Duration(title, startDate, endDate);
         Assert.assertSame("Startdate equals constructor startdate", startDate, duration.getStartDate());
         Assert.assertSame("Enddate equals constructor enddate", endDate, duration.getEndDate());
-        Assert.assertSame("Title equals constructor title", title, duration.getTitle());
+        Assert.assertSame("Title equals constructor message", title, duration.getMessage());
     }
 
 }

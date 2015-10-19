@@ -11,7 +11,9 @@ public class Activity extends Thread {
 
     protected Date start;
 
-    protected Boolean isActive = false;
+    protected Date end;
+
+    protected Boolean isPersisted = false;
 
     public Activity(String name) {
         super(name);
@@ -33,45 +35,53 @@ public class Activity extends Thread {
     @Override
     public synchronized void start() {
         super.start();
-        activate();
+        start = new Date();
+        isNotPersisted();
+        deactivateSiblings();
     }
 
     @Override
     public void interrupt() {
-        persist();
+        pause();
         super.interrupt();
     }
 
-    public void activate() {
-        deactivateSiblings();
-        if (!isActive) {
-            isActive = true;
-            start = new Date();
-        }
+    public Activity isPersisted() {
+        isPersisted = true;
+        return this;
     }
 
-    public void pause() {
-        if (isActive) {
-            isActive = false;
-            persist();
-        }
+    public Activity isNotPersisted() {
+        isPersisted = false;
+        return this;
     }
 
-    protected void persist() {
-        Date end = new Date();
+    public Activity pause() {
+        end = new Date();
+        persist();
+        return this;
+    }
+
+    protected Activity persist() {
+        if(isPersisted){
+           return this;
+        }
         Session session = Default.getSession();
         Transaction tx = session.beginTransaction();
         Duration duration = new Duration(getName(), start, end);
         session.save(duration);
         session.flush();
         tx.commit();
+        isPersisted();
+        return this;
     }
 
-    public void deactivateSiblings() {
-        for( Activity activity: ActivityThreads.activities) {
+    public Activity deactivateSiblings() {
+        for (Activity activity : ActivityThreads.activities) {
             if (activity != this) {
                 activity.pause();
             }
         }
+        return this;
     }
 }

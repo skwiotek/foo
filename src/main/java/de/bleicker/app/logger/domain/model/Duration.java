@@ -7,14 +7,14 @@ public class Duration {
 
     protected String identity = UUID.randomUUID().toString();
 
-    protected String title;
+    protected String message;
 
     protected Date startDate = new Date();
 
     protected Date endDate = new Date();
 
-    public Duration(String title, Date startDate, Date endDate) {
-        this.title = title;
+    public Duration(String message, Date startDate, Date endDate) {
+        this.message = message;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -31,8 +31,8 @@ public class Duration {
         return endDate;
     }
 
-    public String getTitle() {
-        return title;
+    public String getMessage() {
+        return message;
     }
 
     public void setIdentity(String identity) {
@@ -47,8 +47,8 @@ public class Duration {
         this.endDate = endDate;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
 
