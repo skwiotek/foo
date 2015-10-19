@@ -13,22 +13,6 @@ public class Duration {
 
     protected Date endDate = new Date();
 
-    public Duration() {
-    }
-
-    public Duration(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Duration(String title) {
-        this.title = title;
-    }
-
-    public Duration(Date startDate, Date endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-    }
-
     public Duration(String title, Date startDate, Date endDate) {
         this.title = title;
         this.startDate = startDate;
@@ -51,11 +35,6 @@ public class Duration {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -66,6 +45,10 @@ public class Duration {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
 
