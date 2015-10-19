@@ -6,7 +6,6 @@
     <class name="de.bleicker.app.logger.domain.model.Duration" table="duration">
         <id name="identity" type="java.lang.String">
             <column name="identity" />
-            <!--<generator class="org.hibernate.id.UUIDGenerator" />-->
         </id>
         <property name="title" type="java.lang.String">
             <column name="title" not-null="false" />
