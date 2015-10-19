@@ -23,6 +23,7 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.cache:OSCacheProvider:3.6.10.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hsqldb:hsqldb-j5:2.2.4" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.37" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-c3p0:5.0.2.Final" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.2.1" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.3.4" level="project" />
