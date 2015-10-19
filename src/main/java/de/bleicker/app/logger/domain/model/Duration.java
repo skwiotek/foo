@@ -7,6 +7,8 @@ public class Duration {
 
     protected String identity = UUID.randomUUID().toString();
 
+    protected String title;
+
     protected Date startDate = new Date();
 
     protected Date endDate = new Date();
@@ -18,13 +20,17 @@ public class Duration {
         this.startDate = startDate;
     }
 
+    public Duration(String title) {
+        this.title = title;
+    }
+
     public Duration(Date startDate, Date endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public Duration(String identity, Date startDate, Date endDate) {
-        this.identity = identity;
+    public Duration(String title, Date startDate, Date endDate) {
+        this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -40,6 +46,15 @@ public class Duration {
     public Date getEndDate() {
         return endDate;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 
     public void setIdentity(String identity) {
         this.identity = identity;

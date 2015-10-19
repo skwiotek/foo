@@ -34,4 +34,11 @@ public class DurationTest {
         Assert.assertSame("Startdate equals constructor startdate", startDate, duration.getStartDate());
         Assert.assertSame("Enddate equals constructor enddate", endDate, duration.getEndDate());
     }
+
+    @Test
+    public void titleTest() {
+        Duration duration = new Duration("foo");
+        Assert.assertNotNull("foo", duration.getTitle());
+    }
+
 }
